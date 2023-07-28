@@ -1,0 +1,28 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+import cities from "../data/cities.json";
+
+---
+<SiteLayout title="Cidades">
+    <div class="container py-3">
+        <div class="mb-3">
+            <h1 class="display-4">
+                Cidades
+            </h1>
+            <p class="lead">
+                Escolha a cidade para ver os Apps disponíveis.
+            </p>
+        </div>
+        <div class="row">
+            {cities.map((city) =>
+                <div class="col-12 col-md-4 col-xl-3">
+                    <h5 class="card-title">
+                        { city.name }
+                    </h5>
+                    <a href={ 'cidade'+city.slug } class="stretched-link"></a>
+                </div>
+            )}
+        </div>
+    </div>
+</SiteLayout>

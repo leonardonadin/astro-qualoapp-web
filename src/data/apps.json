@@ -1,0 +1,19 @@
+[
+    {
+        "name": "iFood",
+        "logo_url": "https://www.ifood.com.br/delivery/assets/img/logos/logo-ifood-2x.png",
+        "url": "https://www.ifood.com.br/",
+        "cities": [
+            "sao-miguel-do-oeste"
+        ]
+    },
+    {
+        "name": "Clubfood",
+        "logo_url": "https://www.clubfood.com.br/assets/img/logo.png",
+        "url": "https://www.clubfood.com.br/",
+        "cities": [
+            "sao-miguel-do-oeste",
+            "guaraciaba"
+        ]
+    }
+]

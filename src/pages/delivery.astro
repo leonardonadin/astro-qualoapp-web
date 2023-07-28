@@ -1,0 +1,54 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const cities = ["São Paulo", "Rio de Janeiro", "Belo Horizonte", "Curitiba", "Porto Alegre", "Brasília", "Salvador", "Fortaleza", "Recife", "Campinas", "Goiânia", "Florianópolis", "Guarulhos", "São Bernardo do Campo", "São José dos Campos", "Santo André", "Ribeirão Preto", "Osasco", "Sorocaba", "Maceió", "Vitória", "São Luís", "Mauá", "Carapicuíba", "Campo Grande", "Natal", "Cuiabá", "São Gonçalo", "Nova Iguaçu", "Aracaju", "Feira de Santana", "São João de Meriti", "Jaboatão dos Guararapes", "Uberlândia", "São José do Rio Preto", "Santos", "Duque de Caxias", "Betim", "Olinda", "Contagem", "São José dos Pinhais", "Florianópolis", "Porto Velho", "Mogi das Cruzes", "João Pessoa", "Ribeirão das Neves", "Sorocaba", "Juiz de Fora", "Londrina", "Niterói", "Caxias do Sul", "Belford Roxo", "Joinville", "Volta Redonda", "Serra", "Diadema", "Campos dos Goytacazes", "Caruaru", "Ananindeua", "São Vicente", "Maringá", "Montes Claros", "Macaé", "Anápolis", "Vitória da Conquista", "São José do Rio Preto", "Cariacica", "Petrópolis", "Itaquaquecetuba", "Uberaba", "Caucaia", "Ponta Grossa", "Pelotas", "Viamão", "Foz do Iguaçu", "Praia Grande", "Rio Branco", "Paulista", "Limeira", "Blumenau", "Caruaru", "Carapicuíba", "Santarém", "Cascavel"];
+const apps = [
+    {
+        name: "iFood",
+        url: "https://www.ifood.com.br/",
+        logo_url: "https://www.ifood.com.br/assets/images/ifood-logo.svg",
+        cities: ["São Paulo", "Rio de Janeiro", "Belo Horizonte", "Curitiba", "Porto Alegre", "Brasília", "Salvador", "Fortaleza", "Recife", "Campinas", "Goiânia", "Florianópolis", "Guarulhos", "São Bernardo do Campo", "São José dos Campos", "Santo André", "Ribeirão Preto", "Osasco", "Sorocaba", "Maceió", "Vitória", "São Luís", "Mauá", "Carapicuíba", "Campo Grande", "Natal", "Cuiabá", "São Gonçalo", "Nova Iguaçu", "Aracaju", "Feira de Santana", "São João de Meriti", "Jaboatão dos Guararapes", "Uberlândia", "São José do Rio Preto", "Santos", "Duque de Caxias", "Betim", "Olinda", "Contagem", "São José dos Pinhais", "Florianópolis", "Porto Velho", "Mogi das Cruzes", "João Pessoa", "Ribeirão das Neves", "Sorocaba", "Juiz de Fora", "Londrina", "Niterói", "Caxias do Sul", "Belford Roxo", "Joinville", "Volta Redonda", "Serra", "Diadema", "Campos dos Goytacazes", "Caruaru", "Ananindeua", "São Vicente", "Maringá", "Montes Claros", "Macaé", "Anápolis", "Vitória da Conquista", "São José do Rio Preto", "Cariacica", "Petrópolis", "Itaquaquecetuba", "Uberaba", "Caucaia", "Ponta Grossa", "Pelotas", "Viamão", "Foz do Iguaçu", "Praia Grande", "Rio Branco", "Paulista", "Limeira", "Blumenau", "Caruaru", "Carapicuíba", "Santarém", "Cascavel"]
+    }
+];
+---
+<SiteLayout title="Delivery">
+    <div class="container">
+        <div class="mb-3">
+            <h1 class="display-4">
+                Delivery
+            </h1>
+            <p class="lead">
+                Aplicativos de delivery de comida
+            </p>
+            <div class="form-group">
+                <label>Cidade</label>
+                <select class="form-control">
+                    <option value="">Selecione uma cidade</option>
+                    {cities.map((city) =>
+                        <option value={ city }>
+                            { city }
+                        </option>
+                    )}
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            {apps.filter((app) => app.cities.includes("São Paulo")).map((app) =>
+                <div class="col-12 col-md-4 col-xl-3">
+                    <div class="card">
+                        <img src={ app.logo_url } alt="" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                { app.name }
+                            </h5>
+                            <p class="card-text">
+                                { app.cities.length } cidades
+                            </p>
+                            <a href={ app.url } class="stretched-link"></a>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </div>
+    </div>
+</SiteLayout>
